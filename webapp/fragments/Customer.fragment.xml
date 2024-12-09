@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="mySelectDialog"
+		noDataText="No Customer Id Found"
+		title="Select Customer Id"
+		search=".onSearch"
+		confirm=".onDialogClose"
+		cancel=".onDialogClose"
+        showClearButton="true"
+		items="{oJsonForView>/}">
+		<ObjectListItem id="_IDGenObjectListIt1"
+			title="{oJsonForView>CustomerID}">
+			
+		</ObjectListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,73 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns ="sap.m"  xmlns:l="sap.ui.layout"  xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="com.sap.project1.controller.Home">
+    <Page id="page" title="{i18n>title}">
+    <content>
+
+    <!-- <List noDataText="Drop list items here" id="list0" items="{/Products}">
+
+        <items>
+
+            <StandardListItem type="Navigation" title="{ProductID}" description="{CompanyName} ({ContactName})" icon="sap-icon://customer" id="item0"/>
+
+        </items>
+
+    </List> -->
+
+
+   		<f:SimpleForm id="SimpleFormToolbar"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+			ariaLabelledBy="Title1" >
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title id="Title1" text="{i18n>simpleform}"/>
+					<ToolbarSpacer id="_IDGenToolbarSpacer1" />
+					<Button id="_IDGenButton" text="{i18n>Edit}"  type="Emphasized"  icon="sap-icon://edit"/>
+                    <Button id="_IDGenButton1" text="{i18n>Save}"  type="Accept"  icon="sap-icon://save" press="onClickSave"/>
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Label id="_IDGenLabel" text="{i18n>CompanyName}" required="true"/>
+				<Input id="cName" value="{SupplierName}" placeholder="{i18n>Custname}"/>
+				<Label id="_IDGenLabel1" text="{i18n>ContactTitle}" required="true" />
+				<Input id="cTitle" value="{Street}"/>
+                <Label id="_IDGenLabel2" text="{i18n>CustomerID}" />
+				<Input id="_IDGenInput2" value="{Street}" maxLength="5" type="Password" showValueHelp="true" valueHelpRequest="valueHelpCustId"/>
+				<Label id="_IDGenLabel3" text="{i18n>City}" />
+			<ComboBox id="_IDGenComboBox1"
+				items="{/Customers}">
+				<core:Item id="_IDGenItem" key="{CustomerID}" text="{City}}" />
+			</ComboBox>
+			</f:content>
+		</f:SimpleForm>
+<List id="_IDGenList"
+		items="{oJsonForView>/}"
+		headerText="Orders">
+		<ObjectListItem id="_IDGenObjectListItem1"
+			title="{oJsonForView>ShipName}"
+			type="Active"
+			press="onListItemPress"
+			number="{oJsonForView>OrderID}">
+		
+			                <ObjectAttribute id="_IDGenObjectAttribute1" text="{oJsonForView>ShipAddress}" />
+                            <ObjectAttribute id="_IDGenObjectAttribute2" text="{oJsonForView>ShipCity},{oJsonForView>ShipCountry},{oJsonForView>ShipPostalCode}" />
+                            <ObjectAttribute id="_IDGenObjectAttribute3"  text="{parts: [{path: 'oJsonForView>ShippedDate'}], formatter: '.formatShippedDate'}" />
+
+		</ObjectListItem>
+	</List>
+
+    </content> 
+    </Page>
+</mvc:View>
