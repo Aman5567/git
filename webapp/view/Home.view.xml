@@ -46,10 +46,12 @@
                 <Label id="_IDGenLabel2" text="{i18n>CustomerID}" />
 				<Input id="_IDGenInput2" value="{Street}" maxLength="5" type="Password" showValueHelp="true" valueHelpRequest="valueHelpCustId"/>
 				<Label id="_IDGenLabel3" text="{i18n>City}" />
+				
 			<ComboBox id="_IDGenComboBox1"
 				items="{/Customers}">
 				<core:Item id="_IDGenItem" key="{CustomerID}" text="{City}}" />
 			</ComboBox>
+			
 			</f:content>
 		</f:SimpleForm>
 <List id="_IDGenList"
@@ -67,7 +69,7 @@
 
 		</ObjectListItem>
 	</List>
-
-    </content> 
+ </content> 
+ 
     </Page>
 </mvc:View>
